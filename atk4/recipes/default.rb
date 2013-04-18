@@ -12,6 +12,7 @@ node[:deploy].each do |application, deploy|
     next
   end
 
+  Chef::Log.debug("#{deploy[:deploy_to]}/current - wonder if it exists?")
   # write out config.php
   template "#{deploy[:deploy_to]}/current/config.php" do
     cookbook 'atk4'
