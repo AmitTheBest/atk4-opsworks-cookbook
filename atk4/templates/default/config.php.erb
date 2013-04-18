@@ -1,0 +1,9 @@
+<?php
+
+$config['dsn']='mysql://<%= @database[:username] %>:<%= @database[:password] %>@<%= @database[:host] %>/<%= @database[:database] %>';
+$config['url_prefix']='';
+
+# log stuff on the server
+$config['logger']['log_output'] = 'full';
+$config['logger']['web_output'] = false;
+$config['logger']['log_dir'] = '<%= @basedir %>/current/logs';
