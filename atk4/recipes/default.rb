@@ -8,7 +8,7 @@ node[:deploy].each do |application, deploy|
   Chef::Log.debug("atk4 starting application #{application} deployment (#{deploy})")
 
   if deploy[:application_type] != 'php'
-    Chef::Log.debug("Skipping lf_fe deploy::php application #{application} as it is not an PHP app")
+    Chef::Log.debug("Skipping atk4 deploy::php application #{application} as it is not an PHP app")
     next
   end
 
@@ -37,7 +37,7 @@ node[:deploy].each do |application, deploy|
 
   # write out .htaccess
   template "#{deploy[:deploy_to]}/current/public/.htaccess" do
-    cookbook 'lf_fe'
+    cookbook 'atk4'
     source 'htaccess.erb'
     mode '0640'
     owner deploy[:user]
