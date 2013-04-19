@@ -45,6 +45,7 @@ node[:deploy].each do |application, deploy|
     EOH
   end
 
+  Chef::Log.debug("atk4: composer installed")
 
   # write out .htaccess
   template "#{deploy[:deploy_to]}/current/public/.htaccess" do
@@ -76,4 +77,5 @@ node[:deploy].each do |application, deploy|
     action :create
   end
 
+  Chef::Log.debug("atk4: leaving default recipe")
 end
